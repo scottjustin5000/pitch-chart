@@ -1,7 +1,14 @@
 # pitch-chart
 
 > simple chart for plotting mlb pitching x,z
+
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+
+### Example
+
+[see here](http://sj5000-pitch-chart.s3-website-us-east-1.amazonaws.com/)
+
 
 ## Usage
 
@@ -36,7 +43,3 @@ data is expected to be in the following structure:
     }, ...]
 }
 ```
-
-### Example
-
-[see here](http://sj5000-pitch-chart.s3-website-us-east-1.amazonaws.com/)
