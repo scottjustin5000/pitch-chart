@@ -1,30 +1,38 @@
 # pitch-chart
 
 > simple chart for plotting mlb pitching x,z
-
-[![NPM](https://img.shields.io/npm/v/pitch-chart.svg)](https://www.npmjs.com/package/pitch-chart) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
-## Install
-
-```bash
-npm install --save pitch-chart
-```
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
 
-import MyComponent from 'pitch-chart'
-import 'pitch-chart/dist/index.css'
+import PitchChart from 'pitch-chart'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
+const Example = ()=> {
+  return{
+    <PitchChart={data} height={300} />
   }
 }
 ```
+data is expected to be in the following structure:
 
-## License
-
-MIT © [scottjustin5000](https://github.com/scottjustin5000)
+```
+{
+  pitcher: 'Some Pitcher',
+  number: 33,
+  title: '2019-04-15 @ BOS',
+  headShot: 'https://images.png',
+  pitches: [ {
+      "id": "1",
+      "zone": 1,
+      "x": -0.47,
+      "z": 3.02,
+      "pitchDescription": "Four-seam FB",
+      "pitchCode": "FF",
+      "pitchResult": "Strike - Called",
+      "batter": "Joc Pederson"
+    }, ...]
+}
+```

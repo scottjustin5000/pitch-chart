@@ -10,6 +10,7 @@ import colorMap from './color-map'
 const Container = styled.div`
   background-color: #fff;
   box-sizing: border-box;
+  width: ${props => props.width}px;
   box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)
 `
 
@@ -17,7 +18,9 @@ const PitchChart = (props) => {
   const [showLegend, setShowLegend] = useState('none')
   const [legendCoords, setLegendCoords] = useState({x:0,y:0})
   const [legendData, setLegendData] = useState([])
+  const  containerWidth =  props.height * (4/ 5)+24
   const ref = useRef()
+
 
   useEffect(()=> {
     const seenBefore = {}
@@ -29,13 +32,13 @@ const PitchChart = (props) => {
       return memo
     },[])
     setLegendData(legend)
-
   },[props.data])
 
 
   const displayLegend = (e) => {
-    const x=e.clientX
-    const	y=e.clientY
+    const x=e.pageX
+    const	y=e.pageY
+    console.log(x,y)
     setLegendCoords({x,y})
     setShowLegend('inline-block')
   }
@@ -43,7 +46,7 @@ const PitchChart = (props) => {
   useOnClickOutside(ref, () => showLegend === 'inline-block' ? setShowLegend('none') : null)
 
   return (
-<Container>
+<Container width={containerWidth}>
   <Legend display={showLegend} coords={legendCoords} data={legendData} />
   <ChartHeader 
     onClick={displayLegend}

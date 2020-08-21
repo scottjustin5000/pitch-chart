@@ -15,6 +15,7 @@ const Left = styled.div`
   display: flex;  
   flex-direction: column; 
   justify-content: space-between;
+  text-align: center;
 `
 
 const Center = styled.div`
@@ -85,7 +86,7 @@ const ZoneItem = styled.div`
 
 const Footer = styled.div`
   width: ${props => props.width}px;
-  margin-left: 8px; 
+  margin-left: 12px; 
   font-size: 0.675rem;
   font-weight:400; 
   line-height: 1.45;
@@ -113,6 +114,7 @@ const Chart = (props) => {
   const [secondHeight, setSecondHeight] = useState(0)
   const [showPitch, setShowPitch] = useState('none')
   const [pitchData, setPitchData] = useState({x:0,y:0})
+
 
   useEffect(()=> {
     const adjusted = props.height * (xRatio / yRatio)
@@ -198,10 +200,10 @@ const Chart = (props) => {
           </FirstLevel>
         </PitchChartContainer>
       </Center>
-      <Right />
+      <Right></Right>
     </Container>
-    <Footer width={adjustedWidth}>
-      <Scale><div>-2</div><div>0</div> <div>2</div></Scale>
+    <Footer width={adjustedWidth + 2}>
+      <Scale><div>-2</div><div></div> <div>2</div></Scale>
       <XTitle>px</XTitle>
     </Footer>
     </React.Fragment>

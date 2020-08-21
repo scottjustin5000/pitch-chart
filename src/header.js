@@ -14,12 +14,14 @@ const Pitcher = styled.div`
   font-weight: 400;
   line-height: 1.45;
   margin: 8px;
+  text-align:center;
 `
 
 const Title = styled.div`
   font-size: 0.675rem;
   font-weight:400;
   line-height: 1.45;
+  text-align:center;
 `
 
 const ImageBase = styled.img`
