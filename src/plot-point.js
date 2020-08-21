@@ -2,16 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import colorMap from './color-map'
 
-// const Plot = styled.div`
-//   position: absolute;
-//   left:${props => props.left}px;
-//   top: ${props => props.top}px;
-//   background-color:${props => props.color};
-//   width:${props => props.radius}px;
-//   height:${props => props.radius}px;
-//   border-radius: 50%;
-// `
-
  const Plot = styled.div.attrs(props => ({
     style: {
       left: props.left+'px',

@@ -36,3 +36,7 @@ data is expected to be in the following structure:
     }, ...]
 }
 ```
+
+### Example
+
+[see here](http://sj5000-pitch-chart.s3-website-us-east-1.amazonaws.com/)
